@@ -1,7 +1,47 @@
-@import "../../../web/assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "_variables";
+@import "compass/css3/user-interface";
+@import "../../../web/assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../web/assets/vendor/font-awesome/scss/font-awesome";
+@import "vendor/drunken-parrot";
 
 body {
   background: $body-bg;
-  color: $color;
+  color: $costal-surf;
+}
+
+h1,
+h2 {
+  color: $white;
+}
+
+.input-icon .fa {
+  color: $costal-surf;
+}
+
+.form-control {
+  background: transparent;
+  border-color: $costal-surf;
+  color: $costal-surf;
+
+  @include input-placeholder {
+    color: $costal-surf;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $white;
+    color: $white;
+  }
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.m-r-20 {
+  margin-right: 20px;
+}
+
+.white-color {
+  color: $white;
 }
