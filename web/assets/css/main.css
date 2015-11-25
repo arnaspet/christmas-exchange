@@ -15658,3 +15658,22 @@ h2 {
 .white-color {
   color: #fff;
 }
+
+@media (max-width: 767px) {
+  /* line 50, ../../../src/Resources/scss/main.scss */
+  .email {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  /* line 56, ../../../src/Resources/scss/main.scss */
+  .name {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+/* line 63, ../../../src/Resources/scss/main.scss */
+label {
+  display: none;
+}

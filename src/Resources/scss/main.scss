@@ -45,3 +45,21 @@ h2 {
 .white-color {
   color: $white;
 }
+
+@media(max-width: $screen-xs-max) {
+  .email {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .name {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+// hack so i wont need to override twig form template
+label {
+  display: none;
+}

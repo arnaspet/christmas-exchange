@@ -17,32 +17,36 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <div class="col-sm-6">
-                        <div class="input-icon">
-                            <span class="fa fa-user"></span>
-                            {{ form_widget(form) }}
-                            <input type="text" class="form-control" placeholder="Friends name">
+            <form class="form-horizontal" role="form" method="post" action="/send-emails">
+                <div class="col-xs-12 text-center m-t-20">
+                    <div class="receivers-container">
+                    {% for receiver in form.receivers %}
+                        <div class="form-group receiver-row">
+                            <div class="col-sm-6">
+                                <div class="input-icon">
+                                    <span class="fa fa-user"></span>
+                                    {{- form_widget(receiver.name, {attr: {class: 'form-control name', placeholder: 'Friends name'}}) -}}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="input-icon">
+                                    <span class="fa fa-envelope-o"></span>
+                                    {{- form_widget(receiver.email, {attr: {class: 'form-control email', placeholder: 'Friends Email'}}) -}}
+                                </div>
+                            </div>
                         </div>
+                    {% endfor %}
                     </div>
-                    <div class="col-sm-6">
-                        <div class="input-icon">
-                            <span class="fa fa-envelope-o"></span>
-                            <input type="email" class="form-control" placeholder="Friends email">
-                        </div>
-                    </div>
-                    <div class="col-xs-12 text-center m-t-20">
-                        <button class="btn btn-warning btn-embossed m-r-20"><i class="fa fa-plus"></i> Add more people</button>
-                        <button class="btn btn-primary btn-embossed"><i class="fa fa-paper-plane-o"></i> Send !</button>
-                    </div>
+                    <button id="add-more-receivers" class="btn btn-warning btn-embossed m-r-20"><i class="fa fa-plus"></i> Add more people</button>
+                    <button class="btn btn-primary btn-embossed" type="submit"><i class="fa fa-paper-plane-o"></i> Send !</button>
                 </div>
+                {{- form_rest(form) -}}
             </form>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="/assets/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>

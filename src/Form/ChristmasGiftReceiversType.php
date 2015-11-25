@@ -10,7 +10,12 @@ class ChristmasGiftReceiversType extends AbstractType
     {
         $form->add('receivers', 'collection', [
             'type' => new GiftReceiverType(),
-            'allow_add' => true
+            'allow_add' => true,
+            'data' => [
+                [],
+                [],
+                []
+            ]
         ]);
     }
 
