@@ -3,6 +3,7 @@
 @import "../../../web/assets/vendor/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "../../../web/assets/vendor/font-awesome/scss/font-awesome";
 @import "vendor/drunken-parrot";
+@import "../../../web/assets/vendor/SpinKit/scss/spinners/11-folding-cube";
 
 body {
   background: $body-bg;
@@ -10,7 +11,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+p {
   color: $white;
 }
 
@@ -25,12 +27,17 @@ h2 {
 
   @include input-placeholder {
     color: $costal-surf;
+    transition: border .25s linear, color .25s linear, background-color .25s linear;
   }
 
   &:hover,
   &:focus {
     border-color: $white;
     color: $white;
+
+    @include input-placeholder {
+      color: $white;
+    }
   }
 }
 
@@ -62,4 +69,69 @@ h2 {
 // hack so i wont need to override twig form template
 label {
   display: none;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, .4);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.sk-folding-cube {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sweet-alert {
+  background: $body-bg;
+  border: 1px solid $white;
+
+  &.success {
+    background: $success-color;
+  }
+
+  .btn {
+    background: transparent;
+    border: 1px solid $white;
+
+    &:focus {
+      border-color: $white;
+      @include box-shadow(none);
+    }
+  }
+
+  .lead {
+    color: $white;
+  }
+
+  .icon.success .placeholder,
+  .icon.error .placeholder {
+    background: transparent;
+    border: 0;
+  }
+
+  .icon.success .line,
+  .icon.error .line {
+    background: $white;
+  }
+
+  .icon.success,
+  .icon.error {
+    border: 1px solid $white;
+  }
+
+  .icon.success::after,
+  .icon.success::before,
+  .icon.success .fix,
+  .icon.error::after,
+  .icon.error::before,
+  .icon.error .fix {
+    background: transparent;
+  }
 }

@@ -15599,24 +15599,103 @@ a.thumbnail[class*="fa-"]:hover:before {
   z-index: -1;
 }
 
-/* line 7, ../../../src/Resources/scss/main.scss */
+/*
+ *  Usage:
+ *
+      <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+      </div>
+ *
+ */
+/* line 14, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube {
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: rotateZ(45deg);
+}
+/* line 25, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform: scale(1.1);
+}
+/* line 33, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  transform-origin: 100% 100%;
+}
+/* line 47, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube2 {
+  transform: scale(1.1) rotateZ(90deg);
+}
+/* line 47, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube3 {
+  transform: scale(1.1) rotateZ(180deg);
+}
+/* line 47, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube4 {
+  transform: scale(1.1) rotateZ(270deg);
+}
+/* line 53, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube2:before {
+  animation-delay: 0.3s;
+}
+/* line 53, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube3:before {
+  animation-delay: 0.6s;
+}
+/* line 53, ../vendor/SpinKit/scss/spinners/11-folding-cube.scss */
+.sk-folding-cube .sk-cube4:before {
+  animation-delay: 0.9s;
+}
+
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+/* line 8, ../../../src/Resources/scss/main.scss */
 body {
   background: #f84545;
   color: #e1eef3;
 }
 
-/* line 12, ../../../src/Resources/scss/main.scss */
+/* line 13, ../../../src/Resources/scss/main.scss */
 h1,
-h2 {
+h2,
+p {
   color: #fff;
 }
 
-/* line 17, ../../../src/Resources/scss/main.scss */
+/* line 19, ../../../src/Resources/scss/main.scss */
 .input-icon .fa {
   color: #e1eef3;
 }
 
-/* line 21, ../../../src/Resources/scss/main.scss */
+/* line 23, ../../../src/Resources/scss/main.scss */
 .form-control {
   background: transparent;
   border-color: #e1eef3;
@@ -15625,55 +15704,144 @@ h2 {
 /* line 61, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .form-control:-moz-placeholder {
   color: #e1eef3;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
 /* line 64, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .form-control::-moz-placeholder {
   color: #e1eef3;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
 /* line 67, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .form-control:-ms-input-placeholder {
   color: #e1eef3;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
 /* line 56, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
 .form-control::-webkit-input-placeholder {
   color: #e1eef3;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
 }
-/* line 30, ../../../src/Resources/scss/main.scss */
+/* line 33, ../../../src/Resources/scss/main.scss */
 .form-control:hover, .form-control:focus {
   border-color: #fff;
   color: #fff;
 }
+/* line 61, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.form-control:hover:-moz-placeholder, .form-control:focus:-moz-placeholder {
+  color: #fff;
+}
+/* line 64, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.form-control:hover::-moz-placeholder, .form-control:focus::-moz-placeholder {
+  color: #fff;
+}
+/* line 67, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.form-control:hover:-ms-input-placeholder, .form-control:focus:-ms-input-placeholder {
+  color: #fff;
+}
+/* line 56, ../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+.form-control:hover::-webkit-input-placeholder, .form-control:focus::-webkit-input-placeholder {
+  color: #fff;
+}
 
-/* line 37, ../../../src/Resources/scss/main.scss */
+/* line 44, ../../../src/Resources/scss/main.scss */
 .m-t-20 {
   margin-top: 20px;
 }
 
-/* line 41, ../../../src/Resources/scss/main.scss */
+/* line 48, ../../../src/Resources/scss/main.scss */
 .m-r-20 {
   margin-right: 20px;
 }
 
-/* line 45, ../../../src/Resources/scss/main.scss */
+/* line 52, ../../../src/Resources/scss/main.scss */
 .white-color {
   color: #fff;
 }
 
 @media (max-width: 767px) {
-  /* line 50, ../../../src/Resources/scss/main.scss */
+  /* line 57, ../../../src/Resources/scss/main.scss */
   .email {
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
 
-  /* line 56, ../../../src/Resources/scss/main.scss */
+  /* line 63, ../../../src/Resources/scss/main.scss */
   .name {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 }
-/* line 63, ../../../src/Resources/scss/main.scss */
+/* line 70, ../../../src/Resources/scss/main.scss */
 label {
   display: none;
+}
+
+/* line 74, ../../../src/Resources/scss/main.scss */
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* line 82, ../../../src/Resources/scss/main.scss */
+.sk-folding-cube {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 91, ../../../src/Resources/scss/main.scss */
+.sweet-alert {
+  background: #f84545;
+  border: 1px solid #fff;
+}
+/* line 95, ../../../src/Resources/scss/main.scss */
+.sweet-alert.success {
+  background: #3eb5ac;
+}
+/* line 99, ../../../src/Resources/scss/main.scss */
+.sweet-alert .btn {
+  background: transparent;
+  border: 1px solid #fff;
+}
+/* line 103, ../../../src/Resources/scss/main.scss */
+.sweet-alert .btn:focus {
+  border-color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+/* line 109, ../../../src/Resources/scss/main.scss */
+.sweet-alert .lead {
+  color: #fff;
+}
+/* line 113, ../../../src/Resources/scss/main.scss */
+.sweet-alert .icon.success .placeholder,
+.sweet-alert .icon.error .placeholder {
+  background: transparent;
+  border: 0;
+}
+/* line 119, ../../../src/Resources/scss/main.scss */
+.sweet-alert .icon.success .line,
+.sweet-alert .icon.error .line {
+  background: #fff;
+}
+/* line 124, ../../../src/Resources/scss/main.scss */
+.sweet-alert .icon.success,
+.sweet-alert .icon.error {
+  border: 1px solid #fff;
+}
+/* line 129, ../../../src/Resources/scss/main.scss */
+.sweet-alert .icon.success::after,
+.sweet-alert .icon.success::before,
+.sweet-alert .icon.success .fix,
+.sweet-alert .icon.error::after,
+.sweet-alert .icon.error::before,
+.sweet-alert .icon.error .fix {
+  background: transparent;
 }

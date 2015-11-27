@@ -1,6 +1,32 @@
 var App = {
     init: function() {
         this.initReceiversAddition();
+        this.initFormSubmit();
+    },
+
+    initFormSubmit: function(){
+      $('.senders-form').on('submit', function(e){
+          e.preventDefault();
+          Loader.startLoader();
+          $.post($(this).attr('action'), $(this).serialize(), function(response){
+            console.log(response);
+              swal({
+                  title: "Good job!",
+                  text: "You clicked the button!",
+                  type: "success",
+                  containerClass: 'success'
+              });
+          }).error(function(){
+              swal({
+                  title: "error !",
+                  text: "You clicked the button!",
+                  type: "error",
+                  containerClass: 'error'
+              });
+          }).always(function(){
+              Loader.stopLoader();
+          });
+      });
     },
 
     initReceiversAddition: function() {

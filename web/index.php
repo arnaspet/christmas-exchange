@@ -32,9 +32,11 @@ $app->post('/send-emails', function (Request $request) use ($app) {
     $form->handleRequest($request);
 
     if ($form->isValid()) {
-        $randomizer = new \ArnasPet\ChristmasExchange\Form\EmailRandomizer();
+        $randomizer = new \ArnasPet\ChristmasExchange\Service\EmailRandomizer();
         $randomizer->addRandomReceiversToSenders($form->getData()['receivers']);
     }
+
+    return new \Symfony\Component\HttpFoundation\JsonResponse([], 200);
 });
 
 $app->run();

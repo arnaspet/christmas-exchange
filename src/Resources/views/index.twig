@@ -6,6 +6,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/vendor/bootstrap-sweetalert/lib/sweet-alert.css"/>
     <link rel="stylesheet" href="/assets/css/main.css"/>
 </head>
 <body>
@@ -17,7 +18,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <form class="form-horizontal" role="form" method="post" action="/send-emails">
+            <form class="form-horizontal senders-form" role="form" method="post" action="/send-emails">
                 <div class="col-xs-12 text-center m-t-20">
                     <div class="receivers-container">
                     {% for receiver in form.receivers %}
@@ -37,8 +38,14 @@
                         </div>
                     {% endfor %}
                     </div>
-                    <button id="add-more-receivers" class="btn btn-warning btn-embossed m-r-20"><i class="fa fa-plus"></i> Add more people</button>
-                    <button class="btn btn-primary btn-embossed" type="submit"><i class="fa fa-paper-plane-o"></i> Send !</button>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-sm-offset-2">
+                            <button id="add-more-receivers" class="btn btn-block btn-warning btn-embossed m-r-20"><i class="fa fa-plus"></i> Add more people</button>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 ">
+                            <button class="btn btn-primary btn-embossed btn-block" type="submit"><i class="fa fa-paper-plane-o"></i> Send !</button>
+                        </div>
+                    </div>
                 </div>
                 {{- form_rest(form) -}}
             </form>
@@ -46,6 +53,8 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+<script src="/assets/js/loader.js"></script>
 <script src="/assets/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
