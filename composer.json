@@ -10,7 +10,8 @@
         "symfony/config": "^2.7",
         "symfony/translation": "^2.7",
         "symfony/security-csrf": "^2.7",
-        "symfony/twig-bridge": "^2.7"
+        "symfony/twig-bridge": "^2.7",
+        "swiftmailer/swiftmailer": "^5.4"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "2.*",

@@ -8,7 +8,8 @@ class ChristmasGiftReceiversType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $form, array $options)
     {
-        $form->add('receivers', 'collection', [
+        $form->add('priceCeil', 'integer')
+        ->add('receivers', 'collection', [
             'type' => new GiftReceiverType(),
             'allow_add' => true,
             'data' => [
